@@ -2,7 +2,7 @@
 # Copyright 2018, 2020 Heliconia Solutions Pvt Ltd (https://heliconia.io)
 
 {
-    'name': "HSPL User Simulation",
+    'name': "User Simulation",
 
     'summary': """
         User simulation For admin Who can login to any user from this module using smart button on upper right corner.
