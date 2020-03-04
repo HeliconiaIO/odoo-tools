@@ -5,7 +5,7 @@
     'name': "HSPL User Simulation",
 
     'summary': """
-        User simulation For admin- Who can login to any user from this module using smart button on upper right corner.
+        User simulation For admin Who can login to any user from this module using smart button on upper right corner.
     """,
 
     'description': """
@@ -13,9 +13,9 @@
         Settings > Users > select the User > Other : User Simulation(tick the checkbox)
     """,
 
-    'author': "Heliconia Solutions Pvt ltd",
+    'author': "Heliconia Solutions Pvt. Ltd.",
     'website': "https://heliconia.io",
-    'category': 'Uncategorized',
+    'category': 'Tools',
     'version': '13.0.1',
     'depends': ['base', 'web'],
     'data': [
