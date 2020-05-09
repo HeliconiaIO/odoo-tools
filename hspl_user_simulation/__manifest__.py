@@ -25,5 +25,6 @@
     ],
     'qweb': [
         "static/src/xml/widget.xml",
-    ]
+    ],
+    'images': ['static/description/heliconia_odoo_user_simulation.gif']
 }
