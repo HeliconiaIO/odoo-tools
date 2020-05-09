@@ -3,7 +3,7 @@
 
 {
     'name': 'No Mail Server Copied',
-    'version': '13.0.1.1.0',
+    'version': '11.0.1.1.0',
     'category': 'Base',
     'sequence': 15,
     'summary': 'Prevents copy of mail servers while duplication / backup',
