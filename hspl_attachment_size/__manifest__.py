@@ -4,14 +4,14 @@
     'name': "Attachment Size",
 
     'summary': """
-        Compute Attachment size in ir.attachment For Odoo V13 Community and Enterprise """,
+        Attachment size in tree & form view """,
 
     'description': """
-        Compute Attachment size in ir.attachment
+        Attachment size in tree & form view
     """,
 
-    'author': "Heliconia Solutions Pvt ltd",
-    'website': "http://heliconia.in/",
+    'author': "Heliconia Solutions Pvt. Ltd.",
+    'website': "http://heliconia.io/",
 
     'category': 'base',
     'version': '13.0.1',
