@@ -15,7 +15,7 @@
 
     'category': 'base',
     'version': '13.0.1',
-    "license": "OPL-3",
+    "license": "AGPL-3",
 
     'depends': ['base'],
 
