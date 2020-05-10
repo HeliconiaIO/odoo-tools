@@ -13,10 +13,10 @@
     'author': "Heliconia Solutions Pvt. Ltd.",
     'website': "http://heliconia.io/",
 
-    'category': 'base',
+    'category': 'Tools',
     'version': '13.0.1',
 
-    'depends': ['Tools'],
+    'depends': ['base'],
 
     'data': [
         'views/views.xml',
