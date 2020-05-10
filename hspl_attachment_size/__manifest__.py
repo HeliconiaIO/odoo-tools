@@ -15,9 +15,8 @@
 
     'category': 'base',
     'version': '13.0.1',
-    "license": "AGPL-3",
 
-    'depends': ['base'],
+    'depends': ['Tools'],
 
     'data': [
         'views/views.xml',
