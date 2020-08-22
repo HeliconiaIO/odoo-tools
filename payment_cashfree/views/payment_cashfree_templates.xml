@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cashfree_form">
+        <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
+        <input type="hidden" name="appId" t-att-value='appId' />
+        <input type="hidden" name="orderId" t-att-value="orderId"/>
+        <input type="hidden" name="orderAmount" t-att-value="orderAmount"/>
+        <input type="hidden" name="orderCurrency" t-att-value="orderCurrency"/>
+<!--        <input type="hidden" name="orderNote" t-att-value="orderNote"/>-->
+        <input type="hidden" name="customerName" t-att-value="customerName"/>
+        <input type="hidden" name="customerEmail" t-att-value="customerEmail"/>
+        <input type="hidden" name="customerPhone" t-att-value="customerPhone"/>
+        <input type="hidden" name="returnUrl" t-att-value="returnUrl"/>
+        <input type="hidden" name="notifyUrl" t-att-value="notifyUrl"/>
+        <input type="hidden" name="signature" t-att-value="signature"/>
+
+    </template>
+</odoo>
