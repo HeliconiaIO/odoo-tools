@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="memcached_expiry_seconds_key" model="ir.config_parameter">
+            <field name="key">memcached.expiry.seconds</field>
+            <field name="value" eval="86400"/>
+        </record>
+
+    </data>
+</odoo>
