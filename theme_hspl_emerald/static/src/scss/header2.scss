@@ -1,0 +1,29 @@
+.header-main-nav
+{
+	.navbar-nav
+	{
+	 	& .nav-item
+	 	{
+	 		& .nav-link 
+	 		{
+	 			font-weight:600;
+	 			text-transform:uppercase;
+	 		}
+	 	}
+	}
+	.navbar-collapse
+	{
+		@include media-breakpoint-down(md)
+		{
+			background-color: #1e1615;
+			padding: 16px;
+		}
+	}
+}
+.o_header_affix.affix.affixed
+{
+	.navbar-dark.header-main-nav
+	{
+		background-color: theme-color('primary') !important;
+	}
+}

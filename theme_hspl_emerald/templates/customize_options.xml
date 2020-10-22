@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <template id="option_header_01_assets" inherit_id="website.assets_frontend" priority="17" active="true">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/theme_hspl_emerald/static/src/scss/header1.scss" />
+            </xpath>
+        </template>
+        <template id="option_header_02_assets" inherit_id="website.assets_frontend" priority="17" active="False">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/theme_hspl_emerald/static/src/scss/header2.scss" />
+            </xpath>
+        </template>
+        <template id="theme_customize" inherit_id="website.theme_customize">
+            <xpath expr="//content[@id='theme_customize_content_fonts']" position="after">
+                <content id="theme_customize_content_header" string="Headers" title="Choose your Header styles">
+                    <more data-depends="">
+                        <list>
+                            <!-- Header 1 -->
+                            <opt data-xmlid="theme_hspl_emerald.option_header_01_assets,theme_hspl_emerald.header_1" data-reload="/" string="Header 1" />
+                            <!-- Header 1 End-->
+                            <!-- Header 2 -->
+                            <opt data-xmlid="theme_hspl_emerald.option_header_02_assets,theme_hspl_emerald.header_2" data-reload="/" string="Header 2" />
+                            <!-- Header 2 End-->
+                        </list>
+                    </more>
+                </content>
+            </xpath>
+        </template>
+    </odoo>
