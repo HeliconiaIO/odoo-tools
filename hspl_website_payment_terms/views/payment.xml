@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_tearms_check" inherit_id="payment.payment_tokens_list" name="Shop terms">
+        <xpath expr="//div[@class='card']" position="after">
+            <div style="float:left!important;"
+                 class="custom-control custom-checkbox float-right mt-2 oe_accept_cgv_button">
+                <input type="checkbox" id="checkbox_cgv" class="custom-control-input"/>
+                <label for="checkbox_cgv" class="custom-control-label">
+                    I agree to the
+                    <a target="_BLANK" href="/shop/terms">terms &amp; conditions</a>
+                </label>
+            </div>
+            <br/>
+            <br/>
+        </xpath>
+    </template>
+
+</odoo>
