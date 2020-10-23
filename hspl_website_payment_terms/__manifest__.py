@@ -15,8 +15,10 @@
     'data': [
         'views/payment.xml',
     ],
+    'images': [
+        'static/description/screenshot.png',
+    ],
     'installable': True,
     'auto_install': False,
     'application': False,
-    'images': []
 }
