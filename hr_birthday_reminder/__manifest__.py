@@ -17,7 +17,7 @@
         'data/ir_config_settings_data.xml',
         'views/res_config_settings_views.xml',
     ],
-    'images': ['static/description/heliconia_employee_birthday_reminder.png'],
+    'images': ['static/description/heliconia_birthday_reminder_wish.gif'],
     'installable': True,
     'auto_install': False,
     'application': True,
