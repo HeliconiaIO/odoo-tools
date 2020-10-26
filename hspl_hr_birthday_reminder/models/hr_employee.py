@@ -8,18 +8,6 @@ from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 class ResUsers(models.Model):
     _inherit = "res.users"
 
-    @api.multi
-    def get_employees(self):
-        today_date = datetime.today()
-        results = self.env['hr.employee'].search([('birthday', '!=', False)])
-        reminder_before_day = self.env['ir.config_parameter'].sudo().get_param("employee.reminder_before_day")
-        employees = self.env['hr.employee']
-        for employee in results:
-            emp_day = (employee.birthday - timedelta(days=int(reminder_before_day))).day
-            if today_date.day == emp_day and today_date.month == employee.birthday.month:
-                employees += employee
-        return employees
-
     @api.model
     def get_employee_birthday_info(self):
         reminder_before_day = self.env['ir.config_parameter'].sudo().get_param("employee.reminder_before_day")
@@ -43,31 +31,28 @@ class HrEmployee(models.Model):
             employee.birthday_month = employee.birthday.month
 
     @api.model
-    def email_to_manager(self):
-        user_group = self.env.ref("hr.group_hr_manager")
-        email_list = [
-            usr.partner_id.email for usr in user_group.users if usr.partner_id.email]
-        return ", ".join(email_list)
-
-    @api.model
     def send_birthday_reminder_employee(self):
         IrConfigParameter = self.env['ir.config_parameter'].sudo()
         template_env = self.env['mail.template']
-        send_employee = IrConfigParameter.get_param("employee.send_wish_employee")
-        send_manager = IrConfigParameter.get_param("employee.send_wish_manager")
+        send_employee = bool(IrConfigParameter.get_param("employee.send_wish_employee"))
+        send_manager = bool(IrConfigParameter.get_param("employee.send_wish_manager"))
+
         # Send birthday wish to employee
-        if send_employee == 'True':
-            domain = [('birthday_date', '=', datetime.today().day), ('birthday_month', '=', datetime.today().month)]
+        if send_employee:
+            domain = [('birthday_date', '=', datetime.today().day),
+                      ('birthday_month', '=', datetime.today().month)]
             emp_template_id = IrConfigParameter.get_param("employee.emp_wish_template_id")
-            template_id = template_env.sudo().browse(int(emp_template_id))
-            for employee in self.env['hr.employee'].search(domain):
-                template_id.send_mail(employee.id)
+            if emp_template_id:
+                template_id = template_env.sudo().browse(int(emp_template_id))
+                for employee in self.env['hr.employee'].search(domain):
+                    template_id.send_mail(employee.id)
 
         # Send birthday reminder to HR manager
-        if send_manager == 'True':
+        if send_manager:
             birthday_info = self.env['res.users'].get_employee_birthday_info()
             if len(birthday_info.get('employees')):
                 manager_template_id = IrConfigParameter.get_param("employee.manager_wish_template_id")
-                template_id = template_env.sudo().browse(int(manager_template_id))
-                for manager in self.env.ref('hr.group_hr_manager').users:
-                    template_id.send_mail(manager.id)
+                if manager_template_id:
+                    template_id = template_env.sudo().browse(int(manager_template_id))
+                    for manager in self.env.ref('hr.group_hr_manager').users:
+                        template_id.send_mail(manager.id)
