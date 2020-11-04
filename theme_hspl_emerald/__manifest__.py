@@ -8,7 +8,7 @@
     'summary': '',
     'version': '14.0.0.1.0',
     'license': 'OPL-1',
-    'depends': ['base','website', 'website_crm'],
+    'depends': ['base','website', 'website_crm','website_sale'],
     'data': [
         'templates/assets.xml',
         'templates/headers.xml',
