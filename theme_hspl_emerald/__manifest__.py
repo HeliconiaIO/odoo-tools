@@ -18,7 +18,8 @@
         'templates/contact.xml',
     ],
     'images': [
-        'static/description/screenshot.png',
+        'static/description/Emerald_description.png',
+        'static/description/emerald_screenshot.png',
     ],
 
     'author': "Heliconia Solutions Pvt. Ltd.",
