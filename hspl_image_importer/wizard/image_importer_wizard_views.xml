@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="image_importer_wizard_form" model="ir.ui.view">
+            <field name="name">image.importer.wizard.form</field>
+            <field name="model">image.importer.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="state" invisible="1"/>
+                    <group states="init">
+                        <group>
+                            <field name="model_id" required="1"
+                                   options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
+                            <field name="binary_field_id" required="1"
+                                   options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"
+                                   domain="[('model_id', '=', model_id), ('ttype', '=', 'binary')]"/>
+                            <field name="file_input" filename="import_filename" required="1"/>
+                            <field name="import_filename" invisible="1"/>
+                        </group>
+                    </group>
+                    <group states="done" colspan="4">
+                        <span class="o_form_label">Your file has been successfully uploaded...</span>
+                    </group>
+                    <group states="error" colspan="4">
+                        <field name="error_msg" readonly="1" nolabel="1"/>
+                    </group>
+                    <footer states="init">
+                        <button string="Import" name="import_data" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                    <footer states="done,error">
+                        <button name="action_reload" string="Close" type="object" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="image_importer_wizard_action" model="ir.actions.act_window">
+            <field name="name">Image Importer</field>
+            <field name="res_model">image.importer.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_image_importer"
+                  name="Image Importer"
+                  action="image_importer_wizard_action"
+                  parent="base.menu_administration"
+                  sequence="1"/>
+
+    </data>
+</odoo>
