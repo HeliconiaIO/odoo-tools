@@ -6,7 +6,7 @@
     'description': 'A Responsive Bootstrap Theme for Odoo CMS',
     'category': 'Theme/Business',
     'summary': '',
-    'version': '14.0.0.1.0',
+    'version': '14.0.0.1.1',
     'license': 'OPL-1',
     'depends': ['base','website', 'website_crm','website_sale'],
     'data': [
