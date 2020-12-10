@@ -149,8 +149,9 @@
                         <div class="col-lg-12">
                             <!-- Copyright -->
                             <p class="footer-copy ">
-                                Copyright &amp;copy; <span t-field="res_company.name" itemprop="name">Company name
-                            </span> All rights reserved.
+                                Powered by <a href="https://apps.odoo.com/apps/themes/14.0/theme_hspl_emerald/"
+                                              title="Heliconia">Emerald Odoo Theme
+                            </a> from <a href="https://www.heliconia.io" title="Heliconia">Heliconia</a>.
                             </p>
                         </div>
                     </div>
